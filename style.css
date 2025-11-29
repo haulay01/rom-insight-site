@@ -1,0 +1,375 @@
+/* ================================
+   Base and theme
+   ================================ */
+:root {
+  /* Brand accents */
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --surface-2: #1f1f1f;
+  --text: #f0f0f0;
+  --muted: #b5b5b5;
+
+  /* Accents */
+  --accent: #25D366;     /* WhatsApp green */
+  --accent-dark: #128C7E;
+  --gold: #FFD700;       /* Heading accent */
+
+  /* Shadows */
+  --glow-green: 0 0 12px rgba(37, 211, 102, 0.35);
+  --glow-gold: 0 0 12px rgba(255, 215, 0, 0.30);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ================================
+   Layout
+   ================================ */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  padding: 24px;
+  background: linear-gradient(180deg, #141414 0%, #111 100%);
+  border-right: 1px solid #222;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  margin: 0 0 16px 0;
+  font-weight: 600;
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sidebar nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  background-color: var(--surface);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 32px;
+}
+
+/* ================================
+   Hero section
+   ================================ */
+.hero {
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero h2 {
+  margin: 0 0 8px 0;
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+}
+
+.hero p {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+}
+
+.hero a button {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.hero a button:hover {
+  background-color: var(--accent-dark);
+  box-shadow: var(--glow-green);
+  transform: translateY(-1px);
+}
+
+/* ================================
+   Sections and headings
+   ================================ */
+section {
+  margin-top: 28px;
+}
+
+#books h2,
+#contact h2 {
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+  margin: 0 0 16px 0;
+}
+
+/* ================================
+   Search bar (Option 1)
+   ================================ */
+#searchBar {
+  width: 100%;
+  padding: 12px;
+  margin: 16px 0 22px 0;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: var(--surface);
+  color: var(--text);
+  font-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#searchBar::placeholder {
+  color: #8a8a8a;
+}
+
+#searchBar:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--glow-green);
+}
+
+/* ================================
+   Book cards
+   ================================ */
+.book-card {
+  background-color: var(--surface-2);
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  border-color: #2a2a2a;
+}
+
+.book-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: var(--glow-gold);
+}
+
+.book-card h3 {
+  margin: 0 0 6px 0;
+  color: var(--gold);
+}
+
+.book-card p {
+  margin: 0 0 14px 0;
+  color: var(--muted);
+}
+
+.book-card a button {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.book-card a button:hover {
+  background-color: var(--accent-dark);
+  box-shadow: var(--glow-green);
+  transform: translateY(-1px);
+}
+
+/* ================================
+   Contact (Option 2)
+   ================================ */
+.contact {
+  background: linear-gradient(180deg, var(--surface) 0%, #161616 100%);
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: #8a8a8a;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--glow-green);
+}
+
+.contact button {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.contact button:hover {
+  background-color: var(--accent-dark);
+  box-shadow: var(--glow-green);
+  transform: translateY(-1px);
+}
+
+.contact p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ================================
+   Footer
+   ================================ */
+footer {
+  margin-top: 24px;
+  padding: 14px 0;
+  color: var(--muted);
+  border-top: 1px solid #222;
+}
+
+/* ================================
+   Buttons (global baseline)
+   ================================ */
+button {
+  font-family: inherit;
+}
+
+/* ================================
+   Responsive design
+   ================================ */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #222;
+    margin-bottom: 12px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .hero,
+  .contact {
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  .book-card {
+    margin: 14px 0;
+    border-radius: 12px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .hero a button,
+  .book-card a button,
+  .contact button {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  #searchBar {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
